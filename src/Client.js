@@ -4,7 +4,7 @@ import socketIOClient from 'socket.io-client';
 import './assets/client.css'
 
 // Attach location or domain name here
-const socket = socketIOClient("http://192.168.1.20:8080");
+const socket = socketIOClient("http://192.168.1.16:5000");
 
 export default function Client() {
 
@@ -19,27 +19,27 @@ export default function Client() {
 
     function handleForward(e) {
         e.preventDefault();
-        socket.emit("move", 0001);
+        socket.emit("move", '0001');
     }
 
     function handleBackward(e) {
         e.preventDefault();
-        socket.emit("move", 0010);
+        socket.emit("move", '0010');
     }
 
     function handleLeft(e) {
         e.preventDefault();
-        socket.emit("move", 0011);
+        socket.emit("move", '0011');
     }
 
     function handleRight(e) {
         e.preventDefault();
-        socket.emit("move", 0100);
+        socket.emit("move", '0100');
     }
 
     function handleStop(e){
         e.preventDefault();
-        socket.emit("move", 0101);
+        socket.emit("move", '0101');
     }
 
     return (
